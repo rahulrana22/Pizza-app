@@ -1,0 +1,9 @@
+//In this file you will write the files that you want to ignore or you dont want to add
+
+
+
+
+.DS_Store
+node_modules
+
+.env

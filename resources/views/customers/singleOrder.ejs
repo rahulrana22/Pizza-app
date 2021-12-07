@@ -1,0 +1,34 @@
+<section class="status">
+
+    <div class="container mx-auto">
+        <!-- here "status-box" is a customized class given by us -->
+        <div class=" status-box w-full lg:w-2/3 mx-auto">
+
+           <div class="flex items-center justify-between mb-12">
+            
+            <h1 class="text-xl font-bold">Tracker delivery</h1>
+            <h6 class="bg-white py-1 px-4 text-green-600 text-s rounded-full"> <%=order._id  %>  </h6>
+            
+            <!-- This input is used, so that we can catch the "order" in the app.js file
+            in the updateStatus function -->
+            <!-- we are getting the "order" as an object but we have to pass string inside the value
+            that's why we ae using json.stringify -->
+            <input type="hidden" id="hiddenInput" value="<%= JSON.stringify(order)%> ">
+           
+        
+        </div>
+          <!-- this List is to show the status with the icons -->
+          <ul>
+             <!--here "status_line"-->
+             <li class="status_line text-sm md:text-xl pb-16" data-status="order_placed"><span>Order Placed</span></li>
+             <li class="status_line text-sm md:text-xl pb-16" data-status="confirmed"><span>Order Confirmation</span></li>
+             <li class="status_line text-sm md:text-xl pb-16" data-status="prepared"><span>Preparation</span></li>
+             <li class="status_line text-sm md:text-xl pb-16" data-status="delivered"><span>Out for Delivery</span></li>
+             <li class="status_line text-sm md:text-xl  " data-status="completed"><span>Complete</span></li>
+             
+        
+        </ul>
+
+        </div>
+    </div>
+</section>

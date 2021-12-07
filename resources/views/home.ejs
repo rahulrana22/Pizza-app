@@ -1,0 +1,87 @@
+
+<section class="hero py-16">
+
+    <div class="container mx-auto flex items-center justify-between">
+        
+       <!-- the class= "w-1/2" will give 50% to both the div present the tetx and the photo -->
+        <div class="w-1/2"> 
+          
+        <h5 class="text-xl"><em>Are you Hungry?</em></h5>
+        <h1 class="text-3xl md:text-6xl font-bold">Don't Wait!</h1>
+        <!-- below btn-primary class is defined by us -->
+        <button class ="px-12 py-4 rounded-full text-white font-bold mt-4 btn-primary">Order Now</button>
+        </div>
+     
+     
+     
+        <div class="w-1/2">
+            <img src="/img/hero-pizza.png" alt="Hero Pizza"></div>
+    </div>
+
+</section>
+
+
+<!-- 
+// ALL Pizzaas -->
+<section class="menu container mx-auto py-8 ">
+
+  
+    <h1 class="text-4xl font-bold mb-10 text-center">All Pizzas</h1>
+     <!-- below we are givind breakpoints md , lg , xl from tailwind css to make the site responsive  -->
+   <div class="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3  xl:grid-cols-4  col-gap-12 row-gap-16">     
+       
+      <!-- 1. -->
+
+      <% pizzas.forEach(function(pizza){%>
+       
+        <div class="w-full md:w-64"> 
+         <img  class = " h-40 mb-4 mx-auto" src="img/<%= pizza.image%>" alt="Pizza">
+         <div class="text-center">
+             <h2 class="mb-4 text-lg"><%= pizza.name%></h2>
+             <span class=" size py-1 px-4 rounded-full uppercase text-xs"><%= pizza.size%></span>
+            </div>
+          
+         
+         
+ 
+         <div class="flex items-center justify-around mt-6">
+             
+       <span class="font-bold text-lg">&#8377;<%= pizza.price%></span>
+        
+
+    <!-- below data-pizza is a private information that is not visible to the user but can be used by the developer in further code 
+    , this data-pizza will carry the whole information about the pizza and we can use to add the pizza to the cart -->
+       
+    <!--this data-pizza is a object , but we first have to convert into String so that we can send it  -->
+    <button data-pizza = "<%=JSON.stringify(pizza)%>" class="add-to-cart rounded-full px-6 py-1 flex items-center font-bold">
+           <span>+</span>
+           <span class="ml-4">Add</span>
+       </button>
+         </div>
+ 
+   </div>          
+
+        
+   <%  }) %>
+     
+    </div>
+   
+   
+ 
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
